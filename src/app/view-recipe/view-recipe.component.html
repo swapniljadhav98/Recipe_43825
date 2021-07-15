@@ -1,0 +1,29 @@
+<div class="card w-85 m-5">
+  <div class="card-body">
+    <h5 class="card-title" id="recipeName">{{ recipe.recipeName }}</h5>
+    <small class="text-muted" id="recipeCreatedAt">Created on {{ recipe.date | date }}, </small>
+    <small class="text-muted" id="recipeCategory">Category: {{ recipe.category }}, </small>
+    <small class="text-muted" id="recipeCalories">Calories: {{ recipe.calories }}</small>
+    <p class="card-text" id="recipeIngredients">
+      Ingredients: {{ recipe.ingredients }}
+    </p>
+  </div>
+  <div class="card-footer">
+    <button
+      type="button"
+      class="btn btn-success"
+      id="recipeUpdate"
+      [routerLink]="['/updateRecipe', recipe.id]"
+    >
+      Update recipe
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      id="recipeDelete"
+      (click)="deleteRecipe(recipe.id)"
+    >
+      Delete recipe
+    </button>
+  </div>
+</div>
